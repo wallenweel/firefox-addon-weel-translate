@@ -1,4 +1,4 @@
-## WeeL Translate
+## WeeL Translate V0.1.2
 
 *** `Pre-Alpha step, some bugs in it` ***
 
@@ -55,5 +55,4 @@ At Present, the translation API is using by YouDao, the reason is that GFW ...
 ------
 
 This my first with Firefox Add-on, only a experiment for me, a batter method is going ...
-
 If you enjoy this translation add-on, share it with your friends is good.
