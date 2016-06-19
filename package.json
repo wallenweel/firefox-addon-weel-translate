@@ -1,0 +1,60 @@
+{
+  "title": "WeeL Translate",
+  "name": "weel-translate",
+  "version": "0.1.2",
+  "description": "An Easy Translation",
+  "author": "wallen",
+  "main": "index.js",
+  "preferences": [{
+      "name": "mainPanelWidth",
+      "title": "Main Panel Width",
+      "type": "integer",
+      "value": 300
+      }, {
+      "name": "floatPanelWidth",
+      "title": "Float Panel Width",
+      "type": "integer",
+      "value": 200
+      }, {
+      "name": "select2show",
+      "title": "Auto translate after selected",
+      "description": "Refresh Page after changed",
+      "type": "radio",
+      "value": 3,
+      "options": [
+          {
+              "value": 0,
+              "label": "Use in Button"
+          }, {
+              "value": 1,
+              "label": "Present Near Button"
+          }, {
+              "value": 2,
+              "label": "Present Near Selection"
+          }, {
+              "value": 3,
+              "label": "Float Button"
+          }
+      ]
+  }, {
+      "name": "apiID",
+      "title": "API ID",
+      "description": "come in later...",
+      "type": "string",
+      "value": ""
+  }, {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "come in later...",
+      "type": "string",
+      "value": ""
+  }],
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
