@@ -1,6 +1,6 @@
-## WeeL Translate V0.1.2
+## WeeL Translate v0.1.2
 
-*** `Pre-Alpha step, some bugs in it` ***
+**`Pre-Alpha step, some bugs in it`**
 
 An easy well translation of Firefox Add-on.
 
@@ -42,13 +42,13 @@ At Present, the translation API is using by YouDao, the reason is that GFW ...
 
 0. Ditto
 
-0. ** use in button: ** selected text then click toolbar button to show result
+0. **use in button:** selected text then click toolbar button to show result
 
-0. ** present near button: ** selected text then show the result near toolbar button
+0. **present near button:** selected text then show the result near toolbar button
 
-0. ** present near selection: ** show result near selected text as lite panel
+0. **present near selection:** show result near selected text as lite panel
 
-0. ** float button: ** selected text and show a float icon near it, click it to show result near button
+0. **float button:** selected text and show a float icon near it, click it to show result near button
 
 0. ...
 
