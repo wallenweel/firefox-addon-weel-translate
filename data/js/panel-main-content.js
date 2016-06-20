@@ -84,9 +84,9 @@ function selectActionTrigger( data ) {
         if ( meta.s2s_mode === 2 ) {
             floatPanelLayout();
 
-            data.layout = updateLayout( 's2s_mode_2' );
+            data.layout = updateLayout( 's2s_mode_2', null, 1 );
         } else {
-            data.layout = updateLayout( 'selection' );
+            data.layout = updateLayout( 'selection', meta.main_panel_w, 1 );
         }
 
         return request = onRequest( query );
@@ -206,11 +206,4 @@ function inject2result( data ) {
     } else {
         phonetic.innerHTML = '';
     }
-}
-
-
-
-
-function log( out ) {
-    console.log('panel-main-content js: ' + out);
 }

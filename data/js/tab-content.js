@@ -94,7 +94,7 @@ function createFAB() {
     };
 
     // Create FAB
-    let fab = document.createElement('button');
+    let fab = document.createElement('WeeLTranslateFAB');
 
     fab.className = 'wl__translate-fab';
 
@@ -106,7 +106,7 @@ function createFAB() {
 
     document.body.appendChild( fab );
 
-    fab.addEventListener('click', handleFAB, false);
+    fab.addEventListener('mousedown', handleFAB, false);
 
     return fab;
 }
@@ -160,26 +160,4 @@ function fabHide() {
             this.style[s] = style[s];
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function log( out ) {
-    console.log('tab-content js: ' + out);
 }
