@@ -2,7 +2,7 @@
   "title": "WeeL Translate",
   "name": "weel-translate",
   "version": "0.1.4",
-  "description": "An Easy Translation",
+  "description": "An Easy Well Translation",
   "author": "wallen",
   "main": "index.js",
   "permissions": {
@@ -12,52 +12,56 @@
       "name": "mainPanelWidth",
       "title": "Main Panel Width",
       "type": "integer",
-      "value": 300
+      "value": 300,
+      "hidden": true
       }, {
       "name": "floatPanelWidth",
       "title": "Float Panel Width",
       "type": "integer",
-      "value": 200
+      "value": 200,
+      "hidden": true
       }, {
       "name": "select2show",
-      "title": "Auto translate after selected",
-      "description": "Refresh Page after changed",
+      "title": "交互模式",
+      "description": "更改模式后需刷新已经载入的标签页来使其生效",
       "type": "radio",
       "value": 3,
       "options": [
           {
               "value": 0,
-              "label": "Use in Button"
+              "label": "只从按钮启动"
           }, {
               "value": 1,
-              "label": "Present Near Button"
+              "label": "自动出现在按钮位置"
           }, {
               "value": 2,
-              "label": "Present Near Selection"
+              "label": "自动出现在选中文字位置（实验性）"
           }, {
               "value": 3,
-              "label": "Float Button"
+              "label": "显示浮动按钮"
           }
       ]
   }, {
       "name": "apiID",
       "title": "API ID",
-      "description": "come in later...",
+      "description": "从有道申请的“keyfrom”值",
       "type": "string",
       "value": ""
   }, {
       "name": "apiKey",
       "title": "API Key",
-      "description": "come in later...",
+      "description": "从有道申请的“key”值",
       "type": "string",
       "value": ""
   }],
   "engines": {
-    "firefox": ">=38.0a1",
-    "fennec": ">=38.0a1"
+    "firefox": ">=45.0"
   },
   "license": "MIT",
   "keywords": [
-    "jetpack"
+    "weel",
+    "translate",
+    "translation",
+    "dictionary"
   ]
 }
