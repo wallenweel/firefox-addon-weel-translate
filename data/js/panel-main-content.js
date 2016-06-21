@@ -50,7 +50,7 @@ searchAct.addEventListener('click', searchActionTrigger);
 input.addEventListener('keydown', ( ev ) => {
     if ( ev.keyCode === 13 ) {
         meta.status = 1;
-        
+
         searchActionTrigger( ev );
     }
 });
