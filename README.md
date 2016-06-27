@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## WeeL Translate v0.1.6
 
 An easy well translation of Firefox Add-on.
