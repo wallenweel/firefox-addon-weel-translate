@@ -11,15 +11,8 @@ const selection = {
 let fab, select2translate;
 
 if ( selection.s2s !== 3 && selection.s2s !== 0 )
-    select2translate = ( ev, data ) => {
-        if ( selection.s2s === 2 ) {
-            data.x = ev.clientX;
-            data.y = ev.clientY;
-        }
-
-        self.port.emit('on_select_nofab', data);
-
-        return data;
+    select2translate = () => {
+        self.port.emit( 'on_select_nofab', selection );
     };
 else if ( selection.s2s === 3 )
     fab = createFAB();
@@ -27,6 +20,15 @@ else if ( selection.s2s === 3 )
 
 // Listen Events to Response Data
 window.addEventListener('mouseup', handleSelect, true);
+
+// iframe elements compatibility
+// let iframes = document.querySelectorAll('iframe');
+
+// if ( iframes ) {
+//     for ( let i = 0; i < iframes.length; i++ ) {
+//         iframes[i].contentWindow.addEventListener('mouseup', handleSelect, true);
+//     }
+// }
 
 function handleSelect( ev ) {
     // Get Selection Text
@@ -44,7 +46,19 @@ function handleSelect( ev ) {
         return selection;
     }
 
-    if ( select2translate ) select2translate( ev, selection );
+    if ( selection.s2s !== 0 && selection.s2s !== 1 ) {
+        selection.y = ev.clientY;
+        selection.x = ev.clientX;
+
+        // let iframe = ev.view.frameElement;
+        //
+        // if ( iframe ) {
+        //     selection.y = iframe.offsetTop + ev.clientY;
+        //     selection.x = iframe.offsetLeft + ev.clientX;
+        // }
+    }
+
+    if ( select2translate ) select2translate( ev );
 
     // Trigger FAB
     if ( fab ) fabShow( ev );
@@ -61,6 +75,12 @@ function handleSelect( ev ) {
  */
 function handleAfterSelect( data = '', callback ) {
     window.getSelection().removeAllRanges();
+
+    // if ( iframes ) {
+    //     for ( let i = 0; i < iframes.length; i++ ) {
+    //         iframes[i].contentWindow.getSelection().removeAllRanges();
+    //     }
+    // }
 
     selection.state = 0;
 
@@ -116,26 +136,22 @@ function createFAB() {
  * @param  {Object} ev Events
  */
 function handleFAB( ev ) {
-    let _this = this;
-
     self.port.emit('on_fab_click', selection);
 
     handleAfterSelect(null, () => {
-        fabHide.call( _this );
+        fabHide.call( this );
     });
 }
 
 /**
- * [fabShow description]
- * @param  {[type]} ev [description]
- * @return {[type]}    [description]
+ * Handle FAB Showing
  */
-function fabShow( ev ) {
+function fabShow() {
     let style = {
         visibility: 'visible',
         opacity: 1,
-        top: ev.clientY + 'px',
-        left: ev.clientX + 'px'
+        top: selection.y + 'px',
+        left: selection.x + 'px'
     };
 
     for ( let s in style ) {
@@ -146,8 +162,7 @@ function fabShow( ev ) {
 }
 
 /**
- * [fabHide description]
- * @return {[type]} [description]
+ * Handle FAB Hidding
  */
 function fabHide() {
     let style = {

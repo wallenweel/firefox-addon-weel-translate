@@ -1,4 +1,4 @@
-## WeeL Translate v0.1.2
+## WeeL Translate v0.1.6
 
 **`Pre-Alpha step, some bugs in it`**
 

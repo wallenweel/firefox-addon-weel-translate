@@ -2,7 +2,7 @@
   "title": "WeeL Translate",
   "name": "weel-translate",
   "version": "0.1.6",
-  "description": "An Easy Well Translation",
+  "description": "An Easy Well Translator.",
   "author": "wallen",
   "main": "index.js",
   "permissions": {
@@ -10,16 +10,14 @@
   },
   "preferences": [{
       "name": "mainPanelWidth",
-      "title": "Main Panel Width",
+      "title": "自定义主结果面板宽度",
       "type": "integer",
-      "value": 300,
-      "hidden": true
+      "value": 300
       }, {
       "name": "floatPanelWidth",
-      "title": "Float Panel Width",
+      "title": "自定义浮动结果面板宽度",
       "type": "integer",
-      "value": 200,
-      "hidden": true
+      "value": 200
       }, {
       "name": "select2show",
       "title": "交互模式",
