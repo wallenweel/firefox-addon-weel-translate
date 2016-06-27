@@ -1,10 +1,12 @@
+<<<<<<< HEAD
 ## WeeL Translate v0.1.6
-
-**`Pre-Alpha step, some bugs in it`**
 
 An easy well translation of Firefox Add-on.
 
 At Present, the translation API is using by YouDao, the reason is that GFW ...
+
+Already Added in Firefox Add-ons Store
+[https://addons.mozilla.org/zh-CN/firefox/addon/weel-translate/](https://addons.mozilla.org/zh-CN/firefox/addon/weel-translate/)
 
 ## How to use?
 
