@@ -1,7 +1,15 @@
 const selection = {
     text: '',
-    x: '',
-    y: '',
+    rect: function ( rect, relative ) {
+        for (let p in rect) {
+            this[relative][p] = rect[p];
+        }
+
+        return rect;
+    },
+    client_rect: {},
+    x: null,
+    y: null,
     state: 0,
     fab_state: 0,
     s2s: self.options.s2s
@@ -31,8 +39,10 @@ window.addEventListener('mouseup', handleSelect, true);
 // }
 
 function handleSelect( ev ) {
+    let selected = this.getSelection();
+
     // Get Selection Text
-    selection.text = this.getSelection().toString();
+    selection.text = selected.toString();
 
     // Check Whether Text was selected
     if ( ! selection.text || selection.state ) {
@@ -47,6 +57,10 @@ function handleSelect( ev ) {
     }
 
     if ( selection.s2s !== 0 && selection.s2s !== 1 ) {
+        let _rect = selected.getRangeAt(0).getBoundingClientRect();
+
+        let clientRect = selection.rect(_rect, 'client_rect');
+
         selection.y = ev.clientY;
         selection.x = ev.clientX;
 
