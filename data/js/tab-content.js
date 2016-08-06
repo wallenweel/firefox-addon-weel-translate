@@ -88,7 +88,7 @@ function handleSelect( ev ) {
  * @return {Function}          Callback
  */
 function handleAfterSelect( data = '', callback ) {
-    window.getSelection().removeAllRanges();
+    // window.getSelection().removeAllRanges();
 
     // if ( iframes ) {
     //     for ( let i = 0; i < iframes.length; i++ ) {

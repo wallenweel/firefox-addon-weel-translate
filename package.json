@@ -5,53 +5,66 @@
   "description": "An Easy Well Translator.",
   "author": "wallen",
   "main": "index.js",
-  "permissions": {
-      "multiprocess": true
+  "scripts": {
+    "start": "jpm run",
+    "build": "jpm xpi"
   },
-  "preferences": [{
+  "permissions": {
+    "multiprocess": true
+  },
+  "preferences": [
+    {
       "name": "mainPanelWidth",
       "title": "自定义主结果面板宽度",
       "type": "integer",
       "value": 300
-      }, {
+    },
+    {
       "name": "floatPanelWidth",
       "title": "自定义浮动结果面板宽度",
       "type": "integer",
       "value": 200
-      }, {
+    },
+    {
       "name": "select2show",
       "title": "交互模式",
       "description": "更改模式后需刷新已经载入的标签页来使其生效",
       "type": "radio",
       "value": 3,
       "options": [
-          {
-              "value": 0,
-              "label": "只从按钮启动"
-          }, {
-              "value": 1,
-              "label": "自动出现在按钮位置"
-          }, {
-              "value": 2,
-              "label": "自动出现在选中文字位置（实验性）"
-          }, {
-              "value": 3,
-              "label": "显示浮动按钮"
-          }
+        {
+          "value": 0,
+          "label": "只从按钮启动"
+        },
+        {
+          "value": 1,
+          "label": "自动出现在按钮位置"
+        },
+        {
+          "value": 2,
+          "label": "自动出现在选中文字位置（实验性）"
+        },
+        {
+          "value": 3,
+          "label": "显示浮动按钮"
+        }
       ]
-  }, {
+    },
+    {
       "name": "apiID",
       "title": "API ID",
       "description": "从有道申请的“keyfrom”值",
       "type": "string",
       "value": ""
-  }, {
+    },
+    {
       "name": "apiKey",
       "title": "API Key",
       "description": "从有道申请的“key”值",
       "type": "string",
       "value": ""
-  }],
+    }
+  ],
   "engines": {
     "firefox": ">=45.0"
   },
@@ -61,5 +74,8 @@
     "translate",
     "translation",
     "dictionary"
-  ]
+  ],
+  "devDependencies": {
+    "jpm": "^1.1.3"
+  }
 }
